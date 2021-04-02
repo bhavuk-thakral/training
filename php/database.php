@@ -1,7 +1,7 @@
 
-create database training_db;
+create database training;
 
-use training_db;
+use training;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL auto_increment,

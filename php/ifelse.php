@@ -6,8 +6,8 @@ echo "<br>"."Have a nice day";
 ?>
 
 <?php
-$t=date("H");
-if ($t<"5"){
+$t=date("H");//current time;
+if ($t<"6"){
 echo "<br>"."Have a nice day";
 }
 else {
@@ -27,6 +27,7 @@ else {
 	echo "<br>"."Have a bad day";
 }
 ?>
+
 <?php
 $a=20;
 $b=10;
@@ -50,7 +51,7 @@ switch ($favcolor) {
     echo "Your favorite color is green!";
     break;
   default:
-    echo "Your favorite color is neither red, blue, nor green!";
+    echo "<br>"."Your favorite color is neither red, blue, nor green!";
 }
 ?>
 

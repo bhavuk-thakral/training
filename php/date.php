@@ -23,4 +23,6 @@ echo "<br>"."<b>3rd date format</b><br>";
 $today=date("F jS,l,y");
 echo $today;
 
+echo "<br>","<b>4th date format</b></br>";
+$tomorrow=date("")
 ?>
