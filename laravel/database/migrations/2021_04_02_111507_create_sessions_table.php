@@ -13,13 +13,21 @@ class CreateSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->text('payload');
-            $table->integer('last_activity')->index();
+        Schema::create('session', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('team_id')->nullable();
+            $table->foreignId('task_id')->nullable();
+            $table->foreignId('project_id');
+            $table->unsignedinteger('priority')->nullable();
+            $table->unsignedinteger('status')->default(value,100);
+            $table->foreignId('creator')->nullable();
+            $table->timestamps('due_date')->nullable();
+            $table->timestamps('completed_date')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

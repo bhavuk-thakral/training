@@ -24,26 +24,39 @@ Route::get('/', function () {
     ]);
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+
+Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/welcome', function () {
+Route::get('/welcome', function () {
     return Inertia::render('ourwelcome');
 })->name('welcome');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/bhavuk', function () {
+Route::get('/bhavuk', function () {
     return Inertia::render('Dashboard');
     return "Hello";
-   
 })->name('bhavuk');
 
+//Route::get('/task', function () {
+    //return Inertia::render('Task');
+//})->name('task');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/welcome', function () {
-    return Inertia::render('Dashboard');
-    $welcome ="Hello ,world";
-    return compact("welcome");
-    return ("welcome");
-    return view ("welcome",compact("welcome"));
-})->name('bhavuk');
+Route::get('/project', function () {
+    return Inertia::render('Project');
+})->name('project');
+
+
+Route::resource(name:'task',controller\app\http\controllers\Taskcontroller::class);
+
+//Route::get('/welcome', function () {
+    //return Inertia::render('Dashboard');
+    //$welcome ="Hello ,world";
+   // return compact("welcome");
+    //return ("welcome");
+    //return view ("welcome",compact("welcome"));
+//})->name('bhavuk');
+
+});
