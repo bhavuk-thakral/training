@@ -1,28 +1,40 @@
-<!DOCTYPE html>
-<title>MYblog</title>
+<!doctype html>
+<title>My Blog</title>
 <link rel="stylesheet" href="/app.css">
+<script src="/app.js"></script>
+@extends('layouts')
+@section('content')
 <body>
+    <header><h2>LARAVEL BLOG</h2></header>
 
 <article>
-<h1><a href="/post">My First Post</a></h1>
-<p>
-Here is my first page welcome to my page hey hw are you 
-
-
+<h1><a href="/posts/my-first-blog">
+My First post
+</a></h1>
+<p> 
+Laravel is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller architectural pattern and based on Symfony.
 </p>
-<article>
-<h1><a href="/post">My Second Post</a></h1>
-<p>
-Here is my second page welcome to my page hey hw are you 
+</article>
 
-</p>
 
 <article>
-<h1><a href="/post">My Third Post</a></h1>
-<p>
-Here is my third page welcome to my page hey hw are you 
-
+<h1><a href="/posts/my-second-blog">
+My Second post
+</a>
+</h1>
+<p> 
+Laravel is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller architectural pattern and based on Symfony.
 </p>
+</article>
 
-
+<article>
+<h1><a href="/posts/my-third-blog">
+My Third post
+</a>
+</h1>
+<p> 
+Laravel is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web applications following the model–view–controller architectural pattern and based on Symfony.
+</p>
+</article>
 </body>
+@endsection
